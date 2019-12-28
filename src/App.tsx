@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+const PORT = 9000;
+
 const App: React.FC = () => {
-  const ws = useRef(new WebSocket("ws://localhost:9000"));
+  const ws = useRef(new WebSocket(`ws://localhost:${PORT}`));
   const [text, changeText] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
 
